@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: gobak-sodor-online
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
