@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Gobak Sodor 3D Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="lobby" class="panel">
+  <div class="brand">G<span>O</span>BAK SODOR</div>
+  <p class="sub">Arena tradisional • Multiplayer 3D</p>
+  <input id="name" maxlength="16" placeholder="Nama pemain" value="Pemain">
+  <input id="room" maxlength="8" placeholder="Kode room (kosong = buat room)">
+  <small class="capacity">Maksimal 20 pemain per room</small>
+  <button id="join">Masuk Arena</button>
+  <small>Bagikan kode room kepada teman agar bisa bermain bersama.</small>
+</div>
+<div id="hud" class="hidden">
+  <div class="topbar"><div><b>GOBAK SODOR</b><small id="roomLabel"></small></div><div class="scores"><span>🔵 Penyerang <b id="aScore">0</b></span><span>🔴 Penjaga <b id="gScore">0</b></span></div></div>
+  <div class="info"><span id="teamLabel">Tim</span><span id="players">0 pemain</span><button id="share">Bagikan room</button><button id="start">Mulai ronde</button></div>
+  <div id="toast"></div>
+  <div class="controls">
+    <div class="dpad">
+      <button data-dir="up">▲</button>
+      <div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div>
+    </div>
+    <div class="hint">Gunakan tombol atau WASD / tombol panah</div>
+  </div>
+</div>
+<div id="game"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="game.js"></script>
+</body></html>
